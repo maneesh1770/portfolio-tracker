@@ -1,0 +1,955 @@
+{
+ "updated": "2026-10-03T00:00:00Z",
+ "asOf": "2026-10-03",
+ "source": "starter prices from holdings file",
+ "prices": {
+  "AAVAS": {
+   "close": 1192.5,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "ACUTAAS": {
+   "close": 3196.5,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "ALPHA": {
+   "close": 51.42,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "BAJAJFINSV": {
+   "close": 1732.6,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "BAJFINANCE": {
+   "close": 949.35,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "BHARTIARTL": {
+   "close": 1741.1,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "BLS": {
+   "close": 216.51,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "BSE": {
+   "close": 3046.0,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "CGCL": {
+   "close": 249.5,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "COMMOIETF": {
+   "close": 94.0,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "CONSUMBEES": {
+   "close": 121.58,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "DIXON": {
+   "close": 12700.0,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "EMMVEE": {
+   "close": 306.2,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "EQUAL200": {
+   "close": 12.98,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "EQUAL50": {
+   "close": 309.14,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "ETERNAL": {
+   "close": 313.9,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "FEDERALBNK": {
+   "close": 318.2,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "GROWW": {
+   "close": 180.2,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "GROWWPOWER": {
+   "close": 10.84,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "GROWWRAIL": {
+   "close": 26.14,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "GVT&D": {
+   "close": 4270.0,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "HAL": {
+   "close": 4614.95,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "HDFCAMC": {
+   "close": 2314.25,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "HDFCBANK": {
+   "close": 721.2,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "HDFCLIFE": {
+   "close": 534.2,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "HEALTHIETF": {
+   "close": 164.62,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "HEROMOTOCO": {
+   "close": 5173.0,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "HYUNDAI": {
+   "close": 2025.0,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "ICICIBANK": {
+   "close": 1310.6,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "ICICIGI": {
+   "close": 1568.7,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "ICICIPRULI": {
+   "close": 449.25,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "IDEA": {
+   "close": 12.65,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "IDFCFIRSTB": {
+   "close": 80.39,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "IEX": {
+   "close": 106.05,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "INFRABEES": {
+   "close": 896.72,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "INTERNET": {
+   "close": 13.22,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "ITCHOTELS": {
+   "close": 158.75,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "JSWENERGY": {
+   "close": 485.0,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "JSWINFRA": {
+   "close": 357.45,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "KFINTECH": {
+   "close": 832.0,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "KNRCON": {
+   "close": 113.5,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "KOTAKBANK": {
+   "close": 419.8,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "KPIL": {
+   "close": 1357.4,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "LICI": {
+   "close": 392.2,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "LIQUIDBEES-F": {
+   "close": 1000.01,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "LODHA": {
+   "close": 1105.6,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "LUPIN": {
+   "close": 2031.2,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "MAKEINDIA": {
+   "close": 154.78,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "MARUTI": {
+   "close": 11400.0,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "MASFIN": {
+   "close": 273.15,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "MAZDOCK": {
+   "close": 2068.85,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "MCX": {
+   "close": 3204.0,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "METALIETF": {
+   "close": 12.61,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "MID150BEES": {
+   "close": 225.03,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "MIDSELIETF": {
+   "close": 18.56,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "M&MFIN": {
+   "close": 320.1,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "MSCIINDIA": {
+   "close": 28.03,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "MULTICAP": {
+   "close": 15.78,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "MUTHOOTFIN": {
+   "close": 2700.7,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "NAM-INDIA": {
+   "close": 1050.0,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "NEXT50IETF": {
+   "close": 72.97,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "NIFTYIETF": {
+   "close": 255.21,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "NLCINDIA": {
+   "close": 253.2,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "NMDC": {
+   "close": 75.0,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "NTPC": {
+   "close": 316.7,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "PNBHOUSING": {
+   "close": 1092.0,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "PVTBANIETF": {
+   "close": 27.15,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "RELIANCE": {
+   "close": 1167.7,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "SBILIFE": {
+   "close": 1726.25,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "SETFNIF50": {
+   "close": 242.52,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "SHALBY": {
+   "close": 133.85,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "SUNDARMFIN": {
+   "close": 4399.15,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "SYRMA": {
+   "close": 1718.3,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "TATACONSUM": {
+   "close": 957.0,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "TECHNOE": {
+   "close": 998.6,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "TOP10ADD": {
+   "close": 82.41,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "UCOBANK": {
+   "close": 22.98,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "VAL30IETF": {
+   "close": 14.3,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "VALUEAXIS": {
+   "close": 31.16,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "VBL": {
+   "close": 425.3,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "YESBANK": {
+   "close": 20.75,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "ABCAPITAL": {
+   "close": 375.3,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "ABSLAMC": {
+   "close": 992.35,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "APARINDS": {
+   "close": 17648.65,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "APTUS": {
+   "close": 226.65,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "AUTOIETF": {
+   "close": 26.9,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "AXISBANK": {
+   "close": 1217.1,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "BAJAJHFL": {
+   "close": 82.93,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "BANKINDIA": {
+   "close": 129.48,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "BEL": {
+   "close": 383.5,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "BHEL": {
+   "close": 422.0,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "CAMS": {
+   "close": 677.25,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "CESC": {
+   "close": 131.62,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "CGPOWER": {
+   "close": 879.0,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "CIEINDIA": {
+   "close": 376.95,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "COFORGE": {
+   "close": 1826.0,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "CONSUMER": {
+   "close": 11.09,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "CUMMINSIND": {
+   "close": 4860.0,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "DELHIVERY": {
+   "close": 400.6,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "EIHOTEL": {
+   "close": 298.0,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "EMAMILTD": {
+   "close": 372.65,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "ENRIN": {
+   "close": 3334.0,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "ERIS": {
+   "close": 1189.85,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "FINIETF": {
+   "close": 30.4,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "FORTIS": {
+   "close": 785.9,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "GLENMARK": {
+   "close": 2336.3,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "GOLDCASE-E": {
+   "close": 23.18,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "GPPL": {
+   "close": 165.88,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "GROWWEV": {
+   "close": 30.05,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "ICICIAMC": {
+   "close": 3091.4,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "IGL": {
+   "close": 142.9,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "INDHOTEL": {
+   "close": 718.0,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "INDIAMART": {
+   "close": 1622.45,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "INOXWIND": {
+   "close": 68.9,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "IOB": {
+   "close": 30.38,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "ITC": {
+   "close": 257.0,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "JIOFIN": {
+   "close": 212.5,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "JPPOWER": {
+   "close": 14.82,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "JSL": {
+   "close": 732.7,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "KAYNES": {
+   "close": 3399.0,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "KEI": {
+   "close": 4508.0,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "LEMONTREE": {
+   "close": 107.75,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "LICHSGFIN": {
+   "close": 510.5,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "LT": {
+   "close": 3693.4,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "MANKIND": {
+   "close": 2535.0,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "MAXHEALTH": {
+   "close": 944.85,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "M&M": {
+   "close": 2860.0,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "MOCAPITAL": {
+   "close": 50.75,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "MOTILALOFS": {
+   "close": 990.0,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "MOVALUE": {
+   "close": 108.73,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "MSUMI": {
+   "close": 33.53,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "NH": {
+   "close": 1741.85,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "NSLNISP": {
+   "close": 41.13,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "OILIETF": {
+   "close": 10.68,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "PCJEWELLER": {
+   "close": 12.82,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "PERSISTENT": {
+   "close": 5367.0,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "PFC": {
+   "close": 318.0,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "POLYCAB": {
+   "close": 7990.0,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "PREMIERENE": {
+   "close": 878.05,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "RECLTD": {
+   "close": 289.1,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "REPCOHOME": {
+   "close": 337.75,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "SBIFUNDS": {
+   "close": 500.5,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "SBIN": {
+   "close": 954.1,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "SIEMENS": {
+   "close": 3804.0,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "SILVERCASE-E": {
+   "close": 22.12,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "SONACOMS": {
+   "close": 805.95,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "SUNPHARMA": {
+   "close": 1810.0,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "SUZLON": {
+   "close": 38.96,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "SWIGGY": {
+   "close": 238.0,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "TCI": {
+   "close": 877.3,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "TCS": {
+   "close": 2079.3,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "UNOMINDA": {
+   "close": 1115.0,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "VAML": {
+   "close": 402.85,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "VEDL": {
+   "close": 252.05,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "VEDPOWER": {
+   "close": 32.8,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "VMM": {
+   "close": 99.6,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "VOGL": {
+   "close": 32.0,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  },
+  "ZYDUSLIFE": {
+   "close": 1145.7,
+   "prev": null,
+   "date": "2026-10-03",
+   "mcap_cr": null
+  }
+ }
+}

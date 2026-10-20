@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Portfolio Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f2f4f3; --surface:#ffffff; --ink:#17211d; --muted:#5d6b65; --rule:#d6dcd9;
+  --gain:#0d6b5a; --loss:#b3392f; --flag:#9a6a12; --focus:#1d4ed8; --wash:rgba(13,107,90,.10);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#101614; --surface:#18201d; --ink:#e8eeeb; --muted:#9aa8a2; --rule:#2a3631;
+    --gain:#4fc3a8; --loss:#f08a7e; --flag:#e0b25a; --focus:#7ca2ff; --wash:rgba(79,195,168,.12);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#101614; --surface:#18201d; --ink:#e8eeeb; --muted:#9aa8a2; --rule:#2a3631;
+  --gain:#4fc3a8; --loss:#f08a7e; --flag:#e0b25a; --focus:#7ca2ff; --wash:rgba(79,195,168,.12);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{background:var(--bg);scroll-padding-top:56px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 15px/1.5 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-variant-numeric:tabular-nums}
+main{max-width:1180px;margin:0 auto;padding:max(20px,env(safe-area-inset-top)) 20px 64px}
+h1,h2{margin:0;font-weight:600;letter-spacing:-.01em}
+h1{font-size:20px} h2{font-size:18px}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.top{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;justify-content:space-between;margin-bottom:14px}
+.tabs{display:flex;gap:4px;border-bottom:1px solid var(--rule)}
+.tab{background:none;border:0;border-bottom:3px solid transparent;padding:8px 14px 9px;cursor:pointer;font-weight:500;color:var(--muted)}
+.tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--ink)}
+.tools{display:flex;flex-wrap:wrap;gap:8px}
+.btn{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:6px 12px;cursor:pointer;font-size:14px}
+.btn:hover{border-color:var(--muted)}
+nav.jump{display:flex;gap:18px;margin:0 0 18px;font-size:14px}
+nav.jump a{color:var(--muted);text-decoration:none;border-bottom:1px solid transparent}
+nav.jump a:hover{color:var(--ink);border-bottom-color:var(--ink)}
+.value{font-size:clamp(34px,6vw,52px);font-weight:600;letter-spacing:-.02em;line-height:1.1}
+.sub{color:var(--muted);font-size:14px}
+.facts{display:flex;flex-wrap:wrap;gap:8px 36px;margin:14px 0 30px}
+.fact span{display:block;color:var(--muted);font-size:13px}
+.fact b{font-weight:600;font-size:18px}
+.gain{color:var(--gain)} .loss{color:var(--loss)}
+section{margin-bottom:40px}
+.note{color:var(--muted);font-size:13px;margin:6px 0 10px}
+.filters{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin:12px 0}
+.filters input[type=search],.filters select{padding:6px 10px;border:1px solid var(--rule);border-radius:6px;background:var(--surface)}
+.chk{display:flex;align-items:center;gap:6px;font-size:14px}
+.tablewrap{overflow-x:auto;border:1px solid var(--rule);border-radius:8px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:960px;font-size:14px}
+th,td{padding:8px 10px;text-align:right;border-bottom:1px solid var(--rule);white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+th{font-weight:500;color:var(--muted);font-size:13px;position:sticky;top:0;background:var(--surface);cursor:pointer;user-select:none}
+th[aria-sort="ascending"]::after{content:" \25B2";font-size:10px}
+th[aria-sort="descending"]::after{content:" \25BC";font-size:10px}
+td small{display:block;color:var(--muted);font-size:12px}
+tr:last-child td{border-bottom:0}
+tr.grp td{background:var(--bg);font-weight:600;cursor:pointer;border-top:1px solid var(--rule)}
+tr.grp:hover td{background:var(--wash)}
+td.cap{text-align:center}
+.pill{display:inline-block;padding:1px 8px;border-radius:10px;font-size:12px;border:1px solid var(--rule);color:var(--muted)}
+.sumtbl{min-width:0}
+.sumtbl td:first-child{display:flex;align-items:center;gap:8px}
+.sw{width:10px;height:10px;border-radius:2px;display:inline-block;flex:none}
+tr.sep td{background:var(--bg);color:var(--muted);font-size:12.5px;font-weight:500}
+tr.tot td{font-weight:600;border-top:2px solid var(--ink)}
+.capbar{display:flex;height:22px;border:1px solid var(--rule);border-radius:5px;overflow:hidden;margin:10px 0 14px}
+.capbar span{display:block;height:100%;border-right:1px solid var(--surface)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1px solid var(--rule);background:var(--surface);border-radius:14px;padding:3px 12px;cursor:pointer;font-size:13.5px}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.news{list-style:none;margin:0;padding:0;border:1px solid var(--rule);border-radius:8px;background:var(--surface)}
+.news li{display:grid;grid-template-columns:96px 1fr;gap:2px 14px;padding:10px 14px;border-bottom:1px solid var(--rule)}
+.news li:last-child{border-bottom:0}
+.news .sym{font-weight:600}
+.news a{color:var(--ink);text-decoration:none}
+.news a:hover{text-decoration:underline}
+.news .meta{grid-column:2;color:var(--muted);font-size:12.5px}
+.tag{color:var(--flag);font-weight:500}
+.empty{padding:22px;color:var(--muted)}
+.panel{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:22px;max-width:680px}
+.panel ol{padding-left:20px;margin:10px 0}
+#msg{min-height:22px;font-size:13.5px;color:var(--flag);margin-bottom:6px}
+@media (max-width:560px){.news li{grid-template-columns:1fr}.news .meta{grid-column:1}}
+</style>
+</head>
+<body>
+<main>
+  <div class="top">
+    <div>
+      <h1>Portfolio Tracker</h1>
+      <div class="tabs" role="tablist" id="tabs" aria-label="Portfolios"></div>
+    </div>
+    <div class="tools">
+      <label class="btn">Import holdings<input type="file" id="file" accept=".xlsx,.csv" multiple hidden></label>
+      <button class="btn" id="export">Export holdings.json</button>
+      <button class="btn" id="theme" aria-label="Toggle light or dark theme">Theme</button>
+    </div>
+  </div>
+  <div id="msg" role="status"></div>
+
+  <div id="empty" class="panel" hidden>
+    <h2>Add your holdings</h2>
+    <p class="sub">Your quantities and costs stay in this browser. They are never uploaded to GitHub.</p>
+    <ol>
+      <li>Click <b>Import holdings</b> and choose your broker holdings file (.xlsx with an Equity sheet), or a CSV with the columns <code>symbol, qty, avg_price, sector</code> (add <code>client</code> for several portfolios, and use sector <code>ETF</code> for ETFs).</li>
+      <li>Prices, market-cap groups and news fill in from the data files this site refreshes each weekday.</li>
+    </ol>
+  </div>
+
+  <div id="app" hidden>
+    <section aria-label="Summary">
+      <div class="sub" id="asof"></div>
+      <div class="value" id="total"></div>
+      <div class="facts" id="facts"></div>
+      <nav class="jump" aria-label="Sections"><a href="#holdings">Holdings</a><a href="#news">News</a><a href="#mcap">Market-cap summary</a></nav>
+    </section>
+
+    <section id="holdings">
+      <h2>Holdings by sector</h2>
+      <div class="filters">
+        <input type="search" id="q" placeholder="Search symbol or sector" aria-label="Search holdings">
+        <select id="kind" aria-label="Filter by type"><option value="">Stocks and ETFs</option><option>Stock</option><option>ETF</option></select>
+        <label class="chk"><input type="checkbox" id="grp" checked> Group by sector</label>
+        <span class="sub" id="count"></span>
+      </div>
+      <div class="tablewrap"><table id="tbl"><thead></thead><tbody></tbody></table></div>
+      <div class="note">Click a sector row to collapse it. Last close comes from <code>data/prices.json</code>; if a symbol has no price there, your holdings file's closing price is used.</div>
+    </section>
+
+    <section id="news">
+      <h2>News on your companies</h2>
+      <div class="note" id="newsnote"></div>
+      <div class="filters">
+        <div class="chips" id="chips" role="group" aria-label="Filter headlines"></div>
+        <input type="search" id="nq" placeholder="Search headlines or symbol" aria-label="Search headlines">
+      </div>
+      <ul class="news" id="newslist"></ul>
+      <div style="margin-top:10px"><button class="btn" id="more" hidden>Show more</button></div>
+    </section>
+
+    <section id="mcap">
+      <h2>Market-cap summary</h2>
+      <div class="note" id="capnote"></div>
+      <div class="capbar" id="capbar"></div>
+      <div class="tablewrap"><table class="sumtbl" id="captbl"><thead></thead><tbody></tbody></table></div>
+    </section>
+  </div>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script>
+/* ---------- helpers ---------- */
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const inr = (n, d=0) => n.toLocaleString('en-IN', { minimumFractionDigits:d, maximumFractionDigits:d });
+const money = v => { const a = Math.abs(v), s = v < 0 ? '-' : '';
+  return a >= 1e7 ? `${s}₹${(a/1e7).toFixed(2)} cr` : a >= 1e5 ? `${s}₹${(a/1e5).toFixed(2)} L` : `${s}₹${inr(a)}`; };
+const sgn = (v, d=1) => (v > 0 ? '+' : '') + v.toFixed(d);
+const cls = v => v > 0 ? 'gain' : v < 0 ? 'loss' : '';
+const msg = t => { $('#msg').textContent = t || ''; };
+const pretty = n => n.toLowerCase().replace(/(^|[ &])\w/g, c => c.toUpperCase()).replace(/\b(Fmcg|Nbfc|Etfs|It)\b/g, m => m.toUpperCase());
+const SECTOR_MERGE = { 'SOFTWARE SERVICES':'IT & SOFTWARE', 'IT':'IT & SOFTWARE', 'NBFC':'FINANCIAL SERVICES', 'AUTO ANCILLARY':'AUTOMOBILE' };
+const BUCKETS = ['Large cap','Mid cap','Small cap','Unclassified stocks','ETFs'];
+const BCOLOR = ['#0f766e','#2563eb','#d97706','#9ca3af','#c4b5fd'];
+const ls = {
+  get(k, d){ try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch(e){ return d; } },
+  set(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch(e){} }
+};
+const getJson = async (p, fallback) => {
+  try { const r = await fetch(p + '?t=' + Date.now()); if (!r.ok) throw 0; return await r.json(); } catch(e){ return fallback; }
+};
+
+/* ---------- state ---------- */
+let holdings = {};        // {clientId: [{s, c, q, a, p}]}   s=symbol c=sector q=qty a=avg cost p=closing price in your file
+let prices = { prices:{} }, news = { items:[] }, config = { largeMinCr:106300, midMinCr:33500, overrides:{}, fallback:{} };
+let cur = '', sort = { k:'value', dir:-1 }, tagFilter = 'All', newsLimit = 30;
+const collapsed = new Set();
+
+/* ---------- calculations ---------- */
+function capOf(sym, mcap){
+  if (config.overrides && config.overrides[sym]) return [config.overrides[sym], 'your override'];
+  if (mcap) return [mcap >= config.largeMinCr ? 'Large' : mcap >= config.midMinCr ? 'Mid' : 'Small', `live market cap ₹${inr(mcap)} cr`];
+  if (config.fallback && config.fallback[sym]) return [config.fallback[sym], 'built-in estimate'];
+  return ['', 'unknown'];
+}
+
+function compute(){
+  const rows = (holdings[cur] || []).map(h => {
+    const px = prices.prices[h.s] || {};
+    const price = px.close > 0 ? px.close : h.p, live = px.close > 0;
+    const prev = px.prev > 0 ? px.prev : null;
+    const kind = h.c === 'ETF' ? 'ETF' : 'Stock';
+    const [cap, capWhy] = kind === 'ETF' ? ['', ''] : capOf(h.s, px.mcap_cr);
+    const invested = h.q * h.a, value = h.q * price;
+    return { sym:h.s, cat:h.c, kind, sector: kind === 'ETF' ? 'ETFS' : (SECTOR_MERGE[h.c] || h.c), cap, capWhy,
+      bucket: kind === 'ETF' ? 'ETFs' : (cap ? cap + ' cap' : 'Unclassified stocks'),
+      qty:h.q, avg:h.a, price, live, date:px.date, invested, value, pnl:value - invested, pnlPct:(price / h.a - 1) * 100,
+      dayPct: prev ? (price / prev - 1) * 100 : null, day: prev ? (price - prev) * h.q : 0, hasDay: !!prev };
+  });
+  const total = rows.reduce((a, r) => a + r.value, 0);
+  rows.forEach(r => r.weight = total ? r.value / total * 100 : 0);
+  return { rows, total };
+}
+
+/* ---------- rendering ---------- */
+function renderTabs(){
+  $('#tabs').innerHTML = Object.keys(holdings).map(id =>
+    `<button class="tab" role="tab" aria-selected="${id === cur}" data-id="${esc(id)}">${esc(id)}</button>`).join('');
+}
+
+function renderSummary(rows, total){
+  const inv = rows.reduce((a, r) => a + r.invested, 0), pnl = total - inv;
+  const day = rows.reduce((a, r) => a + r.day, 0), anyDay = rows.some(r => r.hasDay);
+  const st = rows.filter(r => r.kind === 'Stock').reduce((a, r) => a + r.value, 0);
+  const live = rows.filter(r => r.live).length;
+  $('#asof').textContent = `Last close ${prices.asOf || 'not loaded'}. ${live} of ${rows.length} prices from the daily data file, the rest from your holdings file.` +
+    (prices.updated ? ` Data refreshed ${new Date(prices.updated).toLocaleString('en-IN', { dateStyle:'medium', timeStyle:'short' })}.` : '');
+  $('#total').textContent = money(total);
+  $('#facts').innerHTML = `
+    <div class="fact"><span>Invested</span><b>${money(inv)}</b></div>
+    <div class="fact"><span>Profit or loss</span><b class="${cls(pnl)}">${money(pnl)} (${sgn(pnl / inv * 100)}%)</b></div>
+    <div class="fact"><span>Last session</span><b class="${cls(day)}">${anyDay ? money(day) : 'Not available yet'}</b></div>
+    <div class="fact"><span>Stocks / ETFs</span><b>${(st / total * 100).toFixed(0)}% / ${(100 - st / total * 100).toFixed(0)}%</b></div>`;
+}
+
+const COLS = [['sym','Symbol'],['bucket','Cap'],['qty','Qty'],['avg','Avg cost'],['invested','Invested'],['price','Last close'],['dayPct','Day %'],
+  ['value','Value'],['pnl','Profit / loss'],['pnlPct','P&L %'],['weight','Weight %']];
+
+function rowHtml(r){
+  const capCell = r.kind === 'ETF' ? '<span class="pill">ETF</span>' : r.cap ? `<span class="pill" title="${esc(r.capWhy)}">${r.cap}</span>` : '<span class="pill" title="No market cap or estimate">–</span>';
+  return `<tr><td>${esc(r.sym)}<small>${esc(pretty(r.cat))}</small></td><td class="cap">${capCell}</td>
+    <td>${inr(r.qty, r.qty % 1 ? 3 : 0)}</td><td>${inr(r.avg, 2)}</td><td>${inr(r.invested)}</td>
+    <td>${inr(r.price, 2)}${r.live ? '' : '<small>file price</small>'}</td>
+    <td class="${cls(r.dayPct || 0)}">${r.dayPct === null ? '–' : sgn(r.dayPct, 2)}</td>
+    <td>${inr(r.value)}</td><td class="${cls(r.pnl)}">${inr(r.pnl)}</td><td class="${cls(r.pnlPct)}">${sgn(r.pnlPct)}</td><td>${r.weight.toFixed(2)}</td></tr>`;
+}
+
+function renderTable(rows){
+  const q = $('#q').value.trim().toLowerCase(), k = $('#kind').value;
+  const v = rows.filter(r => (!k || r.kind === k) && (!q || r.sym.toLowerCase().includes(q) || r.sector.toLowerCase().includes(q) || r.cat.toLowerCase().includes(q)));
+  const cmp = (a, b) => { const x = a[sort.k], y = b[sort.k];
+    if (x === null) return 1; if (y === null) return -1;
+    return (typeof x === 'string' ? x.localeCompare(y) : x - y) * sort.dir; };
+  $('#tbl thead').innerHTML = '<tr>' + COLS.map(([key, label]) =>
+    `<th data-k="${key}" aria-sort="${sort.k === key ? (sort.dir > 0 ? 'ascending' : 'descending') : 'none'}">${label}</th>`).join('') + '</tr>';
+  let html = '';
+  if ($('#grp').checked){
+    const g = new Map();
+    v.forEach(r => { if (!g.has(r.sector)) g.set(r.sector, []); g.get(r.sector).push(r); });
+    [...g.entries()].map(([s, list]) => ({ s, list, val:list.reduce((a, r) => a + r.value, 0) })).sort((a, b) => b.val - a.val)
+      .forEach(({ s, list, val }) => {
+        const inv = list.reduce((a, r) => a + r.invested, 0), w = list.reduce((a, r) => a + r.weight, 0), open = !collapsed.has(s);
+        html += `<tr class="grp" data-g="${esc(s)}"><td colspan="2">${open ? '▾' : '▸'} ${esc(pretty(s))} (${list.length})</td><td></td><td></td><td>${inr(inv)}</td><td></td><td></td>
+          <td>${inr(val)}</td><td class="${cls(val - inv)}">${inr(val - inv)}</td><td class="${cls(val - inv)}">${sgn((val / inv - 1) * 100)}</td><td>${w.toFixed(2)}</td></tr>`;
+        if (open) html += list.sort(cmp).map(rowHtml).join('');
+      });
+  } else html = v.sort(cmp).map(rowHtml).join('');
+  $('#tbl tbody').innerHTML = html || '<tr><td class="empty" colspan="11">No holdings match.</td></tr>';
+  $('#count').textContent = `${v.length} of ${rows.length} holdings`;
+}
+
+function renderCap(rows, total){
+  const m = {}; BUCKETS.forEach(b => m[b] = { n:0, v:0, inv:0 });
+  rows.forEach(r => { const b = m[r.bucket]; b.n++; b.v += r.value; b.inv += r.invested; });
+  const inv = rows.reduce((a, r) => a + r.invested, 0);
+  $('#capnote').innerHTML = `Large cap is the top 100 companies by market value, mid cap the next 150, small cap the rest (AMFI). Each stock is classified from its live market cap using the cut-offs in <code>data/config.json</code> (large from ₹${inr(config.largeMinCr)} cr, mid from ₹${inr(config.midMinCr)} cr), unless you set an override. Hover a cap label in the table to see how it was decided.`;
+  $('#capbar').innerHTML = BUCKETS.map((b, i) => m[b].inv ? `<span title="${esc(b)} ${(m[b].inv / inv * 100).toFixed(1)}% of invested" style="width:${m[b].inv / inv * 100}%;background:${BCOLOR[i]}"></span>` : '').join('');
+  $('#captbl thead').innerHTML = '<tr><th>Group</th><th>Holdings</th><th>Invested</th><th>% of invested</th><th>Current value</th><th>% of value</th><th>P&L %</th></tr>';
+  let html = '';
+  BUCKETS.forEach((b, i) => {
+    const x = m[b]; if (!x.n) return;
+    if (b === 'ETFs') html += '<tr class="sep"><td colspan="7">Not split by size</td></tr>';
+    html += `<tr><td><i class="sw" style="background:${BCOLOR[i]}"></i>${esc(b)}</td><td>${x.n}</td><td>${inr(x.inv)}</td><td>${(x.inv / inv * 100).toFixed(1)}</td>
+      <td>${inr(x.v)}</td><td>${(x.v / total * 100).toFixed(1)}</td><td class="${cls(x.v - x.inv)}">${sgn((x.v / x.inv - 1) * 100)}</td></tr>`;
+  });
+  html += `<tr class="tot"><td>Total</td><td>${rows.length}</td><td>${inr(inv)}</td><td>100.0</td><td>${inr(total)}</td><td>100.0</td><td class="${cls(total - inv)}">${sgn((total / inv - 1) * 100)}</td></tr>`;
+  $('#captbl tbody').innerHTML = html;
+}
+
+const TAGS = ['All', 'Results', 'Orders & deals', 'Ratings & targets', 'Dividend & corporate', 'Other'];
+function renderNews(rows){
+  const held = new Set(rows.map(r => r.sym));
+  const q = $('#nq').value.trim().toLowerCase();
+  const all = (news.items || []).filter(n => held.has(n.sym));
+  const list = all.filter(n => (tagFilter === 'All' || n.tag === tagFilter) && (!q || n.title.toLowerCase().includes(q) || n.sym.toLowerCase().includes(q)));
+  $('#chips').innerHTML = TAGS.map(t => `<button class="chip" aria-pressed="${t === tagFilter}" data-t="${esc(t)}">${t}${t === 'All' ? ` (${all.length})` : ''}</button>`).join('');
+  $('#newsnote').textContent = news.updated ? `Headlines from Google News, collected ${new Date(news.updated).toLocaleString('en-IN', { dateStyle:'medium', timeStyle:'short' })}. Tags are automatic and can be wrong, so read the source.` :
+    'No headlines yet. They appear after the first scheduled run of the GitHub Action (see the README).';
+  $('#newslist').innerHTML = list.slice(0, newsLimit).map(n => {
+    const safe = /^https?:\/\//.test(n.link) ? n.link : '#';
+    const d = n.date ? new Date(n.date).toLocaleDateString('en-IN', { day:'2-digit', month:'short' }) : '';
+    return `<li><span class="sym">${esc(n.sym)}</span><a href="${esc(safe)}" target="_blank" rel="noopener noreferrer">${esc(n.title)}</a>
+      <span class="meta"><span class="tag">${esc(n.tag)}</span> · ${esc(n.source)} · ${d}</span></li>`;
+  }).join('') || '<li class="empty">No headlines match.</li>';
+  $('#more').hidden = list.length <= newsLimit;
+}
+
+function render(){
+  const has = Object.keys(holdings).length > 0;
+  $('#empty').hidden = has; $('#app').hidden = !has;
+  if (!has) { renderTabs(); return; }
+  if (!holdings[cur]) cur = Object.keys(holdings)[0];
+  const { rows, total } = compute();
+  renderTabs(); renderSummary(rows, total); renderTable(rows); renderNews(rows); renderCap(rows, total);
+}
+
+/* ---------- events ---------- */
+$('#tabs').onclick = e => { const id = e.target.dataset.id; if (id) { cur = id; newsLimit = 30; render(); } };
+$('#tbl').addEventListener('click', e => {
+  const th = e.target.closest('th');
+  if (th){ const k = th.dataset.k; sort = { k, dir: sort.k === k ? -sort.dir : (k === 'sym' || k === 'bucket' ? 1 : -1) }; render(); return; }
+  const g = e.target.closest('tr.grp');
+  if (g){ const s = g.dataset.g; collapsed.has(s) ? collapsed.delete(s) : collapsed.add(s); renderTable(compute().rows); }
+});
+['#q', '#kind', '#grp'].forEach(s => $(s).addEventListener('input', () => renderTable(compute().rows)));
+$('#chips').onclick = e => { const t = e.target.dataset.t; if (t) { tagFilter = t; newsLimit = 30; renderNews(compute().rows); } };
+$('#nq').addEventListener('input', () => { newsLimit = 30; renderNews(compute().rows); });
+$('#more').onclick = () => { newsLimit += 30; renderNews(compute().rows); };
+$('#theme').onclick = () => {
+  const dark = getComputedStyle(document.documentElement).colorScheme === 'dark';
+  document.documentElement.dataset.theme = dark ? 'light' : 'dark';
+};
+$('#export').onclick = () => {
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([JSON.stringify({ portfolios: holdings })], { type:'application/json' }));
+  a.download = 'holdings.json'; a.click();
+};
+
+/* ---------- importing holdings (stays in this browser) ---------- */
+function parseWorkbook(wb){
+  const ws = wb.Sheets['Equity']; if (!ws) throw new Error("no 'Equity' sheet");
+  const rows = XLSX.utils.sheet_to_json(ws, { header:1, defval:null });
+  const at = (r, label) => r.findIndex(c => c !== null && String(c).trim() === label);
+  const h = rows.findIndex(r => at(r, 'Symbol') >= 0); if (h < 0) throw new Error("no 'Symbol' header row");
+  const hdr = rows[h].map(c => c === null ? '' : String(c).trim()), col = n => hdr.indexOf(n);
+  const cidRow = rows.find(r => at(r, 'Client ID') >= 0);
+  const id = cidRow ? String(cidRow[at(cidRow, 'Client ID') + 1]) : 'IMPORTED';
+  const i = { s:col('Symbol'), isin:col('ISIN'), c:col('Sector'), q:col('Quantity Available'), a:col('Average Price'), p:col('Previous Closing Price') };
+  if (Object.values(i).some(x => x < 0)) throw new Error('expected columns not found');
+  const data = rows.slice(h + 1).filter(r => r[i.s] && r[i.isin] && +r[i.q] > 0).map(r => ({
+    s:String(r[i.s]).trim(), c:r[i.c] || 'Unclassified', q:+r[i.q], a:+r[i.a] || 0, p:+r[i.p] || 0 }));
+  return { [id]: data };
+}
+
+function parseCsv(text){
+  const split = l => { const o = []; let cur = '', q = false;
+    for (const ch of l){ if (ch === '"') q = !q; else if (ch === ',' && !q){ o.push(cur.trim()); cur = ''; } else cur += ch; } o.push(cur.trim()); return o; };
+  const lines = text.split(/\r?\n/).filter(l => l.trim());
+  const hdr = split(lines[0]).map(x => x.toLowerCase().replace(/[^a-z]/g, ''));
+  const ix = names => hdr.findIndex(h => names.includes(h));
+  const iS = ix(['symbol']), iQ = ix(['qty', 'quantity']), iA = ix(['avgprice', 'avg', 'averageprice', 'cost']);
+  const iC = ix(['sector', 'industry']), iL = ix(['client', 'portfolio']), iP = ix(['price', 'closeprice', 'close']);
+  if (iS < 0 || iQ < 0 || iA < 0) throw new Error('CSV needs symbol, qty and avg_price columns');
+  const out = {};
+  lines.slice(1).forEach(l => { const p = split(l); if (!p[iS] || !(+p[iQ] > 0)) return;
+    const id = iL >= 0 && p[iL] ? p[iL] : 'MY PORTFOLIO';
+    (out[id] = out[id] || []).push({ s:p[iS].toUpperCase(), c: iC >= 0 && p[iC] ? p[iC] : 'Unclassified', q:+p[iQ], a:+p[iA], p: iP >= 0 ? +p[iP] || 0 : 0 }); });
+  return out;
+}
+
+$('#file').addEventListener('change', async e => {
+  const added = [];
+  for (const f of e.target.files){
+    try {
+      let got;
+      if (/\.csv$/i.test(f.name)) got = parseCsv(await f.text());
+      else { if (typeof XLSX === 'undefined') throw new Error('the spreadsheet reader could not load (are you online?)'); got = parseWorkbook(XLSX.read(await f.arrayBuffer(), { type:'array' })); }
+      Object.assign(holdings, got); Object.keys(got).forEach(k => { added.push(`${k} (${got[k].length})`); cur = k; });
+    } catch (err) { msg(`${f.name}: ${err.message}.`); }
+  }
+  if (added.length){ ls.set('pt_gh_holdings_v1', holdings); msg(`Imported ${added.join(', ')}. Stored in this browser only.`); }
+  e.target.value = ''; render();
+});
+
+/* ---------- start ---------- */
+(async function init(){
+  [prices, news, config] = await Promise.all([getJson('data/prices.json', prices), getJson('data/news.json', news), getJson('data/config.json', config)]);
+  const saved = ls.get('pt_gh_holdings_v1', null);
+  const shared = (await getJson('data/holdings.json', null));        // optional: only for a private repo
+  holdings = saved && Object.keys(saved).length ? saved : (shared && shared.portfolios) || {};
+  cur = Object.keys(holdings)[0] || '';
+  if (location.protocol === 'file:') msg('Opened from a file: price, news and config files cannot be read. Host the folder (or run a local web server) to see them.');
+  render();
+})();
+</script>
+</body>
+</html>

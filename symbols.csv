@@ -1,0 +1,159 @@
+symbol,ticker,name,match,kind
+AAVAS,AAVAS.NS,Aavas Financiers,,stock
+ABCAPITAL,ABCAPITAL.NS,Aditya Birla Capital,,stock
+ABSLAMC,ABSLAMC.NS,Aditya Birla Sun Life AMC,Aditya Birla Sun Life AMC|ABSL AMC,stock
+ACUTAAS,ACUTAAS.NS,Acutaas Chemicals,Acutaas,stock
+ALPHA,ALPHA.NS,,,etf
+APARINDS,APARINDS.NS,Apar Industries,Apar,stock
+APTUS,APTUS.NS,Aptus Value Housing Finance,Aptus,stock
+AUTOIETF,AUTOIETF.NS,,,etf
+AXISBANK,AXISBANK.NS,Axis Bank,,stock
+BAJAJFINSV,BAJAJFINSV.NS,Bajaj Finserv,,stock
+BAJAJHFL,BAJAJHFL.NS,Bajaj Housing Finance,,stock
+BAJFINANCE,BAJFINANCE.NS,Bajaj Finance,,stock
+BANKINDIA,BANKINDIA.NS,Bank of India,,stock
+BEL,BEL.NS,Bharat Electronics,Bharat Electronics|\bBEL\b,stock
+BHARTIARTL,BHARTIARTL.NS,Bharti Airtel,Airtel,stock
+BHEL,BHEL.NS,BHEL Bharat Heavy Electricals,BHEL|Bharat Heavy,stock
+BLS,BLS.NS,BLS International,BLS International,stock
+BSE,BSE.NS,BSE Ltd,\bBSE (Ltd|shares?|stock|Q\d|results|profit|share price),stock
+CAMS,CAMS.NS,CAMS Computer Age Management,\bCAMS\b|Computer Age,stock
+CESC,CESC.NS,CESC,,stock
+CGCL,CGCL.NS,Capri Global Capital,Capri Global|CGCL,stock
+CGPOWER,CGPOWER.NS,CG Power,CG Power,stock
+CIEINDIA,CIEINDIA.NS,CIE Automotive India,CIE Automotive,stock
+COFORGE,COFORGE.NS,Coforge,,stock
+COMMOIETF,COMMOIETF.NS,,,etf
+CONSUMBEES,CONSUMBEES.NS,,,etf
+CONSUMER,CONSUMER.NS,,,etf
+CUMMINSIND,CUMMINSIND.NS,Cummins India,Cummins,stock
+DELHIVERY,DELHIVERY.NS,Delhivery,,stock
+DIXON,DIXON.NS,Dixon Technologies,Dixon,stock
+EIHOTEL,EIHOTEL.NS,EIH Oberoi Hotels,\bEIH\b|Oberoi,stock
+EMAMILTD,EMAMILTD.NS,Emami,,stock
+EMMVEE,EMMVEE.NS,Emmvee Photovoltaic Power,Emmvee,stock
+ENRIN,ENRIN.NS,Siemens Energy India,Siemens Energy,stock
+EQUAL200,EQUAL200.NS,,,etf
+EQUAL50,EQUAL50.NS,,,etf
+ERIS,ERIS.NS,Eris Lifesciences,Eris,stock
+ETERNAL,ETERNAL.NS,Eternal Zomato Blinkit,\bEternal\b|Zomato|Blinkit,stock
+FEDERALBNK,FEDERALBNK.NS,Federal Bank,,stock
+FINIETF,FINIETF.NS,,,etf
+FORTIS,FORTIS.NS,Fortis Healthcare,Fortis,stock
+GLENMARK,GLENMARK.NS,Glenmark Pharmaceuticals,Glenmark,stock
+GOLDCASE-E,GOLDCASE.NS,,,etf
+GPPL,GPPL.NS,Gujarat Pipavav Port,Pipavav,stock
+GROWW,GROWW.NS,Groww Billionbrains Garage Ventures,Groww|Billionbrains,stock
+GROWWEV,GROWWEV.NS,,,etf
+GROWWPOWER,GROWWPOWER.NS,,,etf
+GROWWRAIL,GROWWRAIL.NS,,,etf
+GVT&D,GVT&D.NS,GE Vernova T&D India,GE Vernova|GE T&D,stock
+HAL,HAL.NS,Hindustan Aeronautics,Hindustan Aeronautics|\bHAL\b,stock
+HDFCAMC,HDFCAMC.NS,HDFC AMC,HDFC AMC|HDFC Asset,stock
+HDFCBANK,HDFCBANK.NS,HDFC Bank,,stock
+HDFCLIFE,HDFCLIFE.NS,HDFC Life Insurance,HDFC Life,stock
+HEALTHIETF,HEALTHIETF.NS,,,etf
+HEROMOTOCO,HEROMOTOCO.NS,Hero MotoCorp,Hero Moto,stock
+HYUNDAI,HYUNDAI.NS,Hyundai Motor India,Hyundai,stock
+ICICIAMC,ICICIAMC.NS,ICICI Prudential Asset Management,ICICI (Pru|Prudential) (AMC|Asset),stock
+ICICIBANK,ICICIBANK.NS,ICICI Bank,,stock
+ICICIGI,ICICIGI.NS,ICICI Lombard,ICICI Lombard,stock
+ICICIPRULI,ICICIPRULI.NS,ICICI Prudential Life Insurance,ICICI (Pru|Prudential) Life|ICICI Life,stock
+IDEA,IDEA.NS,Vodafone Idea,Vodafone Idea|\bVi\b,stock
+IDFCFIRSTB,IDFCFIRSTB.NS,IDFC First Bank,IDFC First,stock
+IEX,IEX.NS,Indian Energy Exchange,Indian Energy Exchange|\bIEX\b,stock
+IGL,IGL.NS,Indraprastha Gas,Indraprastha|\bIGL\b,stock
+INDHOTEL,INDHOTEL.NS,Indian Hotels Company,Indian Hotels|\bIHCL\b,stock
+INDIAMART,INDIAMART.NS,IndiaMART InterMESH,IndiaMART,stock
+INFRABEES,INFRABEES.NS,,,etf
+INOXWIND,INOXWIND.NS,Inox Wind,Inox Wind,stock
+INTERNET,INTERNET.NS,,,etf
+IOB,IOB.NS,Indian Overseas Bank,Indian Overseas Bank,stock
+ITC,ITC.NS,ITC Ltd,\bITC\b(?! Hotels),stock
+ITCHOTELS,ITCHOTELS.NS,ITC Hotels,ITC Hotels,stock
+JIOFIN,JIOFIN.NS,Jio Financial Services,Jio Financial,stock
+JPPOWER,JPPOWER.NS,Jaiprakash Power Ventures,Jaiprakash|JP Power,stock
+JSL,JSL.NS,Jindal Stainless,Jindal Stainless,stock
+JSWENERGY,JSWENERGY.NS,JSW Energy,JSW Energy,stock
+JSWINFRA,JSWINFRA.NS,JSW Infrastructure,JSW Infrastructure,stock
+KAYNES,KAYNES.NS,Kaynes Technology,Kaynes,stock
+KEI,KEI.NS,KEI Industries,KEI Industries|\bKEI\b,stock
+KFINTECH,KFINTECH.NS,KFin Technologies,KFin,stock
+KNRCON,KNRCON.NS,KNR Constructions,KNR,stock
+KOTAKBANK,KOTAKBANK.NS,Kotak Mahindra Bank,Kotak,stock
+KPIL,KPIL.NS,Kalpataru Projects International,Kalpataru,stock
+LEMONTREE,LEMONTREE.NS,Lemon Tree Hotels,Lemon Tree,stock
+LICHSGFIN,LICHSGFIN.NS,LIC Housing Finance,LIC Housing,stock
+LICI,LICI.NS,Life Insurance Corporation LIC,\bLIC\b(?! Housing)|Life Insurance Corporation,stock
+LIQUIDBEES-F,LIQUIDBEES.NS,,,etf
+LODHA,LODHA.NS,Lodha Macrotech Developers,Lodha,stock
+LT,LT.NS,Larsen & Toubro,Larsen|L&T,stock
+LUPIN,LUPIN.NS,Lupin,,stock
+M&M,M&M.NS,Mahindra & Mahindra,Mahindra & Mahindra|\bM&M\b(?! Fin),stock
+M&MFIN,M&MFIN.NS,Mahindra and Mahindra Financial Services,Mahindra (&|and) Mahindra Financial|M&M Fin,stock
+MAKEINDIA,MAKEINDIA.NS,,,etf
+MANKIND,MANKIND.NS,Mankind Pharma,,stock
+MARUTI,MARUTI.NS,Maruti Suzuki,,stock
+MASFIN,MASFIN.NS,MAS Financial Services,MAS Financial,stock
+MAXHEALTH,MAXHEALTH.NS,Max Healthcare Institute,Max Healthcare,stock
+MAZDOCK,MAZDOCK.NS,Mazagon Dock Shipbuilders,Mazagon,stock
+MCX,MCX.NS,Multi Commodity Exchange,Multi Commodity|\bMCX\b,stock
+METALIETF,METALIETF.NS,,,etf
+MID150BEES,MID150BEES.NS,,,etf
+MIDSELIETF,MIDSELIETF.NS,,,etf
+MOCAPITAL,MOCAPITAL.NS,,,etf
+MOTILALOFS,MOTILALOFS.NS,Motilal Oswal Financial Services,Motilal Oswal Financial,stock
+MOVALUE,MOVALUE.NS,,,etf
+MSCIINDIA,MSCIINDIA.NS,,,etf
+MSUMI,MSUMI.NS,Motherson Sumi Wiring India,Motherson Sumi Wiring|\bMSUMI\b,stock
+MULTICAP,MULTICAP.NS,,,etf
+MUTHOOTFIN,MUTHOOTFIN.NS,Muthoot Finance,Muthoot Finance,stock
+NAM-INDIA,NAM-INDIA.NS,Nippon Life India Asset Management,Nippon Life India,stock
+NEXT50IETF,NEXT50IETF.NS,,,etf
+NH,NH.NS,Narayana Hrudayalaya,Narayana Hrudayalaya,stock
+NIFTYIETF,NIFTYIETF.NS,,,etf
+NLCINDIA,NLCINDIA.NS,NLC India,NLC India,stock
+NMDC,NMDC.NS,NMDC Ltd,NMDC(?! Steel),stock
+NSLNISP,NSLNISP.NS,NMDC Steel,NMDC Steel,stock
+NTPC,NTPC.NS,NTPC Ltd,NTPC,stock
+OILIETF,OILIETF.NS,,,etf
+PCJEWELLER,PCJEWELLER.NS,PC Jeweller,PC Jeweller,stock
+PERSISTENT,PERSISTENT.NS,Persistent Systems,Persistent Systems,stock
+PFC,PFC.NS,Power Finance Corporation,Power Finance|\bPFC\b,stock
+PNBHOUSING,PNBHOUSING.NS,PNB Housing Finance,PNB Housing,stock
+POLYCAB,POLYCAB.NS,Polycab India,Polycab,stock
+PREMIERENE,PREMIERENE.NS,Premier Energies,Premier Energies,stock
+PVTBANIETF,PVTBANIETF.NS,,,etf
+RECLTD,RECLTD.NS,REC Ltd,\bREC\b,stock
+RELIANCE,RELIANCE.NS,Reliance Industries,Reliance,stock
+REPCOHOME,REPCOHOME.NS,Repco Home Finance,Repco,stock
+SBIFUNDS,SBIFUNDS.NS,SBI Funds Management,SBI Funds|SBI Mutual Fund IPO|SBI AMC,stock
+SBILIFE,SBILIFE.NS,SBI Life Insurance,SBI Life,stock
+SBIN,SBIN.NS,State Bank of India SBI,State Bank of India|\bSBI\b(?! (Life|Funds|Card)),stock
+SETFNIF50,SETFNIF50.NS,,,etf
+SHALBY,SHALBY.NS,Shalby Hospitals,Shalby,stock
+SIEMENS,SIEMENS.NS,Siemens Ltd India,Siemens(?! Energy),stock
+SILVERCASE-E,SILVERCASE.NS,,,etf
+SONACOMS,SONACOMS.NS,Sona BLW Precision Forgings Sona Comstar,Sona (BLW|Comstar),stock
+SUNDARMFIN,SUNDARMFIN.NS,Sundaram Finance,Sundaram Finance,stock
+SUNPHARMA,SUNPHARMA.NS,Sun Pharma,Sun Pharma,stock
+SUZLON,SUZLON.NS,Suzlon Energy,Suzlon,stock
+SWIGGY,SWIGGY.NS,Swiggy,,stock
+SYRMA,SYRMA.NS,Syrma SGS Technology,Syrma,stock
+TATACONSUM,TATACONSUM.NS,Tata Consumer Products,Tata Consumer,stock
+TCI,TCI.NS,Transport Corporation of India,Transport Corporation,stock
+TCS,TCS.NS,Tata Consultancy Services TCS,\bTCS\b|Tata Consultancy,stock
+TECHNOE,TECHNOE.NS,Techno Electric & Engineering,Techno Electric,stock
+TOP10ADD,TOP10ADD.NS,,,etf
+UCOBANK,UCOBANK.NS,UCO Bank,UCO Bank,stock
+UNOMINDA,UNOMINDA.NS,Uno Minda,Uno Minda|Minda,stock
+VAL30IETF,VAL30IETF.NS,,,etf
+VALUEAXIS,VALUEAXIS.NS,,,etf
+VAML,VAML.NS,Vedanta Aluminium Metal,Vedanta Aluminium,stock
+VBL,VBL.NS,Varun Beverages,Varun Beverages|\bVBL\b,stock
+VEDL,VEDL.NS,Vedanta Ltd,Vedanta(?! (Aluminium|Power|Oil)),stock
+VEDPOWER,VEDPOWER.NS,Vedanta Power,Vedanta Power,stock
+VMM,VMM.NS,Vishal Mega Mart,Vishal Mega Mart,stock
+VOGL,VOGL.NS,Vedanta Oil & Gas,Vedanta Oil,stock
+YESBANK,YESBANK.NS,Yes Bank,Yes Bank,stock
+ZYDUSLIFE,ZYDUSLIFE.NS,Zydus Lifesciences,Zydus,stock
